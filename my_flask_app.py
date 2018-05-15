@@ -104,12 +104,6 @@ def ppp(kkk=None):
     return '111'
 
 
-@app.route('/refreshauth')
-def refresh_key(kkk=None):
-    refresh_auth()
-    return 'OK'
-
-
 @app.route('/sign/')
 def sign():
     uname = request.args.get('urlparam')
@@ -117,10 +111,10 @@ def sign():
     global JSAPI_TICKET
     global NONCESTR
     global TIMESTAMP
-    TIMESTAMP = get_timestamp()
     ACCESS_TOKEN = access_token()
     JSAPI_TICKET = jsapi_ticket()
     NONCESTR = gen_noncestr()
+    TIMESTAMP = get_timestamp()
     SIGNATURE_DICT['nonceStr'] = NONCESTR
     SIGNATURE_DICT['appId'] = APPID
     SIGNATURE_DICT['timestamp'] = TIMESTAMP
@@ -130,23 +124,11 @@ def sign():
     return json.dumps(SIGNATURE_DICT, ensure_ascii=False)
 
 
-def refresh_auth():
-    global ACCESS_TOKEN
-    global JSAPI_TICKET
-    global NONCESTR
-    ACCESS_TOKEN = access_token()
-    JSAPI_TICKET = jsapi_ticket()
-    NONCESTR = gen_noncestr()
-    print('ACCESS_TOKEN -> {}'.format(ACCESS_TOKEN))
-    print('JSAPI_TICKET -> {}'.format(JSAPI_TICKET))
-
-
 @app.route('/')
 def hello_world():
     return render_template('index.html')
 
 
 if __name__ == '__main__':
-    # refresh_auth()
     # url_for('static', filename='MP_verify_o4a7u9WNoaCjb43N.txt')
     app.run(host='0.0.0.0', port=80)
