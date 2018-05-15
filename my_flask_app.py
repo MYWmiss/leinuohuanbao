@@ -112,7 +112,7 @@ def refreshauth(kkk=None):
 
 @app.route('/sign/')
 def sign():
-    uname = 'http://www.lnenv.ltd/kkk'  # request.args.get('urlparam')
+    uname = request.args.get('urlparam')
     global ACCESS_TOKEN
     global JSAPI_TICKET
     global NONCESTR
