@@ -25,7 +25,7 @@
         $.ajax({
                type: "GET",
                url: "/sign",
-			   data: encodeURIComponent("urlparam="+window.location.href.split('#')[0].toString()),
+			   data: "urlparam="+window.location.href.split('#')[0].toString(),
                success: function(data){
                     var result = JSON.parse(data);
                     if (result != null) {
@@ -48,7 +48,7 @@
         wx.onMenuShareAppMessage({
             title: 'test', // 分享标题
             desc: 'test', // 分享描述
-            link: encodeURIComponent(location.href.split('#')[0].toString()), // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            link: location.href.split('#')[0].toString(), // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
 			//window.location.href
             imgUrl: 'http://p1.music.126.net/UiKXZjvbLGc0F92BrMpBaA==/18611433325243897.jpg?param=50y50', // 分享图标
             type: 'music', // 分享类型,music、video或link，不填默认为link
