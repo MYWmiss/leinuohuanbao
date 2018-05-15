@@ -117,7 +117,6 @@ def sign():
     global JSAPI_TICKET
     global NONCESTR
     global TIMESTAMP
-    NONCESTR = gen_noncestr()
     TIMESTAMP = get_timestamp()
     SIGNATURE_DICT['nonceStr'] = NONCESTR
     SIGNATURE_DICT['appId'] = APPID
@@ -131,8 +130,10 @@ def sign():
 def refresh_auth():
     global ACCESS_TOKEN
     global JSAPI_TICKET
+    global NONCESTR
     ACCESS_TOKEN = access_token()
     JSAPI_TICKET = jsapi_ticket()
+    NONCESTR = gen_noncestr()
     print('ACCESS_TOKEN -> {}'.format(ACCESS_TOKEN))
     print('JSAPI_TICKET -> {}'.format(JSAPI_TICKET))
 
