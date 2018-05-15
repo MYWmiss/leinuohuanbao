@@ -122,7 +122,7 @@ def sign():
     SIGNATURE_DICT['nonceStr'] = NONCESTR
     SIGNATURE_DICT['appId'] = APPID
     SIGNATURE_DICT['timestamp'] = TIMESTAMP
-    SIGNATURE_DICT['url'] = uname
+    SIGNATURE_DICT['url'] = 'http://www.lnenv.ltd/share'
     SIGNATURE_DICT['signature'] = calc_sign(uname)
     print('appId->{}\nsignature->{}\n'.format(APPID, SIGNATURE_DICT['signature']))
     return json.dumps(SIGNATURE_DICT, ensure_ascii=False)
