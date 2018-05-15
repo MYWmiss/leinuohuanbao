@@ -104,6 +104,12 @@ def ppp(kkk=None):
     return '111'
 
 
+@app.route('/refreshauth')
+def refresh_key(kkk=None):
+    refresh_auth()
+    return 'OK'
+
+
 @app.route('/sign/')
 def sign():
     uname = request.args.get('urlparam')
@@ -127,6 +133,8 @@ def refresh_auth():
     global JSAPI_TICKET
     ACCESS_TOKEN = access_token()
     JSAPI_TICKET = jsapi_ticket()
+    print('ACCESS_TOKEN -> {}'.format(ACCESS_TOKEN))
+    print('JSAPI_TICKET -> {}'.format(JSAPI_TICKET))
 
 
 @app.route('/')
