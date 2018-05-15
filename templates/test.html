@@ -48,7 +48,8 @@
         wx.onMenuShareAppMessage({
             title: 'test', // 分享标题
             desc: 'test', // 分享描述
-            link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            link: 'http://www.lnenv.ltd/111.mp3', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+			//window.location.href
             imgUrl: 'http://avatar.csdn.net/0/4/F/1_zyq527758142.jpg', // 分享图标
             type: 'music', // 分享类型,music、video或link，不填默认为link
             dataUrl: 'http://www.lnenv.ltd/111.mp3', // 如果type是music或video，则要提供数据链接，默认为空
@@ -62,5 +63,6 @@
             }
         });
     });
+
 </script>
 </html>
