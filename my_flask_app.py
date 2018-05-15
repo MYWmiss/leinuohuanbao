@@ -112,7 +112,7 @@ def refreshauth(kkk=None):
 
 @app.route('/sign/')
 def sign():
-    uname = request.args.get('urlparam')
+    uname = 'http://www.lnenv.ltd/kkk'  # request.args.get('urlparam')
     global ACCESS_TOKEN
     global JSAPI_TICKET
     global NONCESTR
@@ -122,7 +122,7 @@ def sign():
     SIGNATURE_DICT['nonceStr'] = NONCESTR
     SIGNATURE_DICT['appId'] = APPID
     SIGNATURE_DICT['timestamp'] = TIMESTAMP
-    SIGNATURE_DICT['url'] = 'http://www.lnenv.ltd/kkk'
+    SIGNATURE_DICT['url'] = uname
     SIGNATURE_DICT['signature'] = calc_sign(uname)
     print('appId->{}\nsignature->{}\n'.format(APPID, SIGNATURE_DICT['signature']))
     return json.dumps(SIGNATURE_DICT, ensure_ascii=False)
