@@ -118,6 +118,9 @@ def sign():
     global NONCESTR
     global TIMESTAMP
     TIMESTAMP = get_timestamp()
+    ACCESS_TOKEN = access_token()
+    JSAPI_TICKET = jsapi_ticket()
+    NONCESTR = gen_noncestr()
     SIGNATURE_DICT['nonceStr'] = NONCESTR
     SIGNATURE_DICT['appId'] = APPID
     SIGNATURE_DICT['timestamp'] = TIMESTAMP
@@ -144,6 +147,6 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    refresh_auth()
+    # refresh_auth()
     # url_for('static', filename='MP_verify_o4a7u9WNoaCjb43N.txt')
     app.run(host='0.0.0.0', port=80)
