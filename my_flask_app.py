@@ -50,6 +50,12 @@ def contact():
 
 
 # 分享音乐页面
+@app.route('/access')
+def share():
+    return render_template('test.html')
+
+
+# 分享音乐页面
 @app.route('/share')
 def share():
     return render_template('test.html')
@@ -99,6 +105,8 @@ def calc_sign(url):
 
 @app.route('/kkk/')
 def ppp(kkk=None):
+    uname = request.args.get('from')
+    print(uname)
     return render_template('simple.html')
 
 
