@@ -65,20 +65,24 @@
 				alert(res);
             },
         });
-		wx.onMenuShareTimeline({
-			title: 'test', // 分享标题
-			link: 'http://www.lnenv.ltd/kkk', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-			imgUrl: 'http://www.lnenv.ltd/111.jpg', // 分享图标
-			dataUrl: 'http://www.lnenv.ltd/111.mp3', // 如果type是music或video，则要提供数据链接，默认为空  http://www.lnenv.ltd/111.mp3
-			success: function () {
-			// 用户确认分享后执行的回调函数
-		},
-		cancel: function () {
-			// 用户取消分享后执行的回调函数
-		},
-		fail: function (res) {
-			alert(res);
-		},
+		wx.onMenuShareAppMessage({
+		  title: 'test',
+		  desc: 'test',
+		  link: 'http://movie.douban.com/subject/25785114/',
+		  imgUrl: 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg',
+		  trigger: function (res) {
+			// 涓嶈灏濊瘯鍦╰rigger涓娇鐢╝jax寮傛璇锋眰淇敼鏈鍒嗕韩鐨勫唴瀹癸紝鍥犱负瀹㈡埛绔垎浜搷浣滄槸涓€涓悓姝ユ搷浣滐紝杩欐椂鍊欎娇鐢╝jax鐨勫洖鍖呬細杩樻病鏈夎繑鍥�
+			alert('那个啥？');
+		  },
+		  success: function (res) {
+			alert('成狗');
+		  },
+		  cancel: function (res) {
+			alert('识别');
+		  },
+		  fail: function (res) {
+			alert(JSON.stringify(res));
+		  }
 		});
     });
 
