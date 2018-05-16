@@ -50,12 +50,6 @@ def contact():
 
 
 # 分享音乐页面
-@app.route('/access')
-def share():
-    return render_template('test.html')
-
-
-# 分享音乐页面
 @app.route('/share')
 def share():
     return render_template('test.html')
