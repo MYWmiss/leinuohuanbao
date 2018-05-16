@@ -99,9 +99,7 @@ def calc_sign(url):
 
 @app.route('/kkk/')
 def ppp(kkk=None):
-    uname = request.args.get('uname')
-    print(uname)
-    return '111'
+    return render_template('simple.html')
 
 
 @app.route('/refresh')

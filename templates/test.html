@@ -30,7 +30,7 @@
                     var result = JSON.parse(data);
                     if (result != null) {
                         wx.config({  
-                            debug: false,
+                            debug: true,
                             appId: result.appId,  
                             timestamp: result.timestamp,  
                             nonceStr: result.nonceStr,  
@@ -65,7 +65,7 @@
 				alert(res);
             },
         });
-		wx.onMenuShareAppMessage({
+		wx.onMenuShareTimeline({
 		  title: 'test',
 		  desc: 'test',
 		  link: 'http://movie.douban.com/subject/25785114/',
