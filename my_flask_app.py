@@ -52,7 +52,7 @@ def contact():
 # 分享音乐页面
 @app.route('/share')
 def share():
-    return render_template('test.html')
+    return app.send_static_file('templates/test.html')
 
 
 # 获取access_token
