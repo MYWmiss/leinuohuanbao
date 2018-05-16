@@ -98,7 +98,9 @@ def calc_sign(url):
 
 
 @app.route('/kkk/')
-def ppp(kkk=None):
+@app.route('/kkk/<name>')
+def ppp(name=None):
+    # if name == 'mo'
     uname = request.args.get('from')
     print(uname)
     return render_template('simple.html')
